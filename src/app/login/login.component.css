@@ -60,3 +60,8 @@
     background-color: #3498db;
     color: white;
 }
+
+#login .form .msgErro {
+    color: #c0392b;
+    font-family: 'Turret Road', cursive;
+}
