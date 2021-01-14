@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "recruteme"
+    }
+  },
+  "defaultProject": "recruteme",
+  "cli": {
+    "analytics": "3ba66c0b-630f-4c37-aa77-b9ee57ccc3be"
+  }
 }

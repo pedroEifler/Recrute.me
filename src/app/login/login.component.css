@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@800&display=swap');
+
+#login {
+    background-color: #2980b9;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#login .form {
+    width: 300px;
+    padding: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #2c3e50;
+}
+
+#login .form h1 {
+    color: #3498db;
+    font-weight: 500;
+    font-family: 'Turret Road', cursive;
+}
+
+#login .form .input {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+#login .form .input:focus {
+    width: 275px;
+    border-color: #2ecc71;
+}
+
+#login .form .bnt {
+    border: 2px solid #3498db;
+    border-radius: 30px;
+    background-color: transparent;
+    color: #3498db;
+    padding: 6px 25px;
+    font-weight: 900;
+    transition: 0.2s;
+    cursor: pointer;
+    outline: none;
+}
+
+#login .form .bnt:hover {
+    background-color: #3498db;
+    color: white;
+}
