@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Candidato } from './Candidato';
+import { Candidato } from '../Candidato';
 
 @Component({
   selector: 'app-login',
