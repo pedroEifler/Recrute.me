@@ -1,14 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@800&display=swap');
 #tabela {
     padding-top: 100vh;
     background-color: #2980b9;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+#tabela .header {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+}
+
+#tabela h1 {
+    color: #3498db;
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Turret Road', cursive;
+}
+
 .table {
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-spacing: 0;
@@ -20,6 +35,7 @@
     color: white;
     padding: 10px;
 }
+
 .table th:first-of-type {
     border-top-left-radius: 10px;
 }
@@ -28,11 +44,13 @@
     border-top-right-radius: 10px;
 }
 
-.table td  {
-    background-color: white;
+.table td {
+    background-color: #ecf0f1;
     border-bottom: 1px solid #2c3e50;
     padding: 7px;
     text-align: center;
+    transition: 200ms;
+    cursor: pointer;
 }
 
 .table tr:last-of-type td:first-of-type {
@@ -43,29 +61,69 @@
     border-bottom-right-radius: 10px;
 }
 
-.table td button {
-    padding: 10px;
-    margin: 2px;
+.table tr:hover td {
+    background-color: #bdc3c7;
+}
+
+.bnt {
+    position: absolute;
+    top: -20%;
+    padding: 10px 20px;
+    border-radius: 10px;
     border: none;
-    border-radius: 50%;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.315);
     color: white;
+    font-weight: 900;
     outline: none;
     cursor: pointer;
-    text-align: center;
 }
 
-.table td .deletar {
-    background-color: #e74c3c;
+.bnt:hover {
+    box-shadow: none;
+    transform: translate(1px, 1px);
 }
 
-.table td .adicionar {
-    background-color: #2ecc71;
+.bntNovo {
+    background-color: #3498db;
+    margin-left: 10px;
+    border-radius: 10px;
 }
 
-.table td .deletar:hover {
-    background-color: #c0392b;
-}
-
-.table td .adicionar:hover {
+.bntPesquisar {
     background-color: #27ae60;
+    margin-left: 115px;
+}
+
+.boxFiltro {
+    display: flex;
+    background-color: #3498db;
+    position: absolute;
+    top: -20%;
+    margin-left: 230px;
+    padding: 8px 20px;
+    border-radius: 10px;
+    vertical-align: auto;
+    opacity: 0;
+    transition: 1s;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.315);
+}
+
+.boxFiltro div {
+    margin-right: 40px;
+    color: white;
+}
+
+.boxFiltro label {
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+}
+
+.esconder {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.mostrar {
+    opacity: 100;
 }

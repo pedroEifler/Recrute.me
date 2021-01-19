@@ -1,98 +1,60 @@
 <div id="tabela">
+    <div class="header">
+        <h1>Recrute.me</h1>
+    </div>
     <table class="table">
+        <button class="bnt bntNovo">
+            <fa-icon [icon]="novo"></fa-icon> Novo
+        </button>
+        <button class="bnt bntPesquisar" (click)="mostrarBoxFiltro()">
+            <fa-icon [icon]="pesquisar"></fa-icon> Filtrar
+        </button>
+        <div class="boxFiltro esconder">
+            <div>
+                <input type="checkbox" id="cSharp">
+                <label for="cSharp">C#</label>
+            </div>
+            <div>
+                <input type="checkbox" id="javascript">
+                <label for="javascript">Javascript</label>
+            </div>
+            <div>
+                <input type="checkbox" id="nodeJs">
+                <label for="nodeJs">Nodejs</label>
+            </div>
+            <div>
+                <input type="checkbox" id="angular">
+                <label for="angular">Angular</label>
+            </div>
+        </div>
         <tr>
-            <th></th>
             <th>Nome</th>
             <th>E-mail</th>
-            <th>Idade</th>
-            <th>Url linkedin</th>
-            <th>Cenhecimento</th>
+            <th>Conhecimentos</th>
         </tr>
         <tr>
-            <td>
-                <button class="deletar">
-                    <fa-icon [icon]="deletar"></fa-icon>
-                </button>
-                <button class="adicionar">
-                    <fa-icon [icon]="adicionar"></fa-icon>
-                </button>
-            </td>
             <td>Jackson</td>
             <td>jackson@gmail.com</td>
-            <td>20</td>
-            <td>linkedin/jackson</td>
+            <td>C#, Javascript, nodeJs, Angular</td>
+        </tr>
+        <tr>
+            <td>Jackson</td>
+            <td>jackson@gmail.com</td>
             <td>--</td>
         </tr>
         <tr>
-            <td>--</td>
             <td>Jackson</td>
             <td>jackson@gmail.com</td>
-            <td>20</td>
-            <td>linkedin/jackson</td>
             <td>--</td>
         </tr>
         <tr>
-            <td>--</td>
             <td>Jackson</td>
             <td>jackson@gmail.com</td>
-            <td>20</td>
-            <td>linkedin/jackson</td>
             <td>--</td>
         </tr>
         <tr>
-            <td>--</td>
             <td>Jackson</td>
             <td>jackson@gmail.com</td>
-            <td>20</td>
-            <td>linkedin/jackson</td>
-            <td>--</td>
-        </tr>
-        <tr>
-            <td>--</td>
-            <td>Jackson</td>
-            <td>jackson@gmail.com</td>
-            <td>20</td>
-            <td>linkedin/jackson</td>
-            <td>--</td>
-        </tr>
-        <tr>
-            <td>--</td>
-            <td>Jackson</td>
-            <td>jackson@gmail.com</td>
-            <td>20</td>
-            <td>linkedin/jackson</td>
-            <td>--</td>
-        </tr>
-        <tr>
-            <td>--</td>
-            <td>Jackson</td>
-            <td>jackson@gmail.com</td>
-            <td>20</td>
-            <td>linkedin/jackson</td>
-            <td>--</td>
-        </tr>
-        <tr>
-            <td>--</td>
-            <td>Jackson</td>
-            <td>jackson@gmail.com</td>
-            <td>20</td>
-            <td>linkedin/jackson</td>
-            <td>--</td>
-        </tr>
-        <tr>
-            <td>--</td>
-            <td>Jackson</td>
-            <td>jackson@gmail.com</td>
-            <td>20</td>
-            <td>linkedin/jackson</td>
-            <td>--</td>
-        </tr>
-        <tr>
-            <td>--</td>
-            <td>Jackson</td>
-            <td>jackson@gmail.com</td>
-            <td>20</td>
-            <td>linkedin/jackson</td>
             <td>--</td>
         </tr>
     </table>
