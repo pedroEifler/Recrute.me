@@ -1,6 +1,7 @@
 <div id="tabela">
     <div class="header">
         <h1>Recrute.me</h1>
+        <h3 routerLink="/login">Sair</h3>
     </div>
     <table class="table">
         <button class="bnt bntNovo">
@@ -32,30 +33,10 @@
             <th>E-mail</th>
             <th>Conhecimentos</th>
         </tr>
-        <tr>
-            <td>Jackson</td>
-            <td>jackson@gmail.com</td>
-            <td>C#, Javascript, nodeJs, Angular</td>
-        </tr>
-        <tr>
-            <td>Jackson</td>
-            <td>jackson@gmail.com</td>
-            <td>--</td>
-        </tr>
-        <tr>
-            <td>Jackson</td>
-            <td>jackson@gmail.com</td>
-            <td>--</td>
-        </tr>
-        <tr>
-            <td>Jackson</td>
-            <td>jackson@gmail.com</td>
-            <td>--</td>
-        </tr>
-        <tr>
-            <td>Jackson</td>
-            <td>jackson@gmail.com</td>
-            <td>--</td>
+        <tr *ngFor="let candidado of candidatos">
+            <td>{{ candidado.nome }}</td>
+            <td>{{ candidado.email }}</td>
+            <td>{{ candidado.cmConhecimento }}</td>
         </tr>
     </table>
 </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { Candidato } from '../Candidato';
+import { FormGroup, FormControl, EmailValidator } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
+import { Recrutador } from '../services/recrutador/recrutador';
+import { RecrutadorService } from '../services/recrutador/recrutador.service'
 
 @Component({
   selector: 'app-login',
@@ -8,34 +10,35 @@ import { Candidato } from '../Candidato';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  formCandidato: FormGroup;
+  formRecrutador: FormGroup;
   msgErro: string = "";
+  recrutadorService: RecrutadorService;
 
-  constructor() {
-  }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
-    this.criarFormulario(new Candidato)
+    this.recrutadorService = new RecrutadorService();
+    this.criarFormulario(new Recrutador)
   }
 
-  criarFormulario(candidato: Candidato) {
-    this.formCandidato = new FormGroup({
-      email: new FormControl(candidato.email),
-      senha: new FormControl(candidato.senha)
+  criarFormulario(recrutador: Recrutador) {
+    this.formRecrutador = new FormGroup({
+      email: new FormControl(recrutador.email),
+      senha: new FormControl(recrutador.senha)
     })
   }
 
-  onSubmit() {
-    if (this.EhAutentico()) {
-      console.warn(this.formCandidato.value);
+  logar() {
+    if (this.ehAutentico()) {
+      this.router.navigate(['tabelaCandidato'])
       this.msgErro = ""
     } else {
-      this.msgErro = "Preencha todos os campo corretamente"
+      this.msgErro = "E-mail ou senha invalidos"
     }
 
   }
 
-  EhAutentico(): Boolean {
-    return !(this.formCandidato.value.email == "" || this.formCandidato.value.senha == "");
+  ehAutentico(): Boolean {
+    return (this.formRecrutador.value.email == this.recrutadorService.GetRecrutador()[0].email && this.formRecrutador.value.senha == this.recrutadorService.GetRecrutador()[0].senha);
   }
 }
