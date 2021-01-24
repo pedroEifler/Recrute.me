@@ -8,38 +8,38 @@ export class Candidato {
 
 export const CANDIDATOS: Candidato[] = [
     {
-        nome: "Pedro Herique Eifler",
+        nome: "Pedro Henrique Eifler",
         email: "pedroqueeifler@gmail.com",
         idade: 20,
         urlLinkedin: "https://www.linkedin.com/in/pedroqueeifler/",
-        cbConhecimentos: []
+        cbConhecimentos: ["ser gostoso", "é bom demais"]
     },
     {
-        nome: "Pedro Herique Eifler",
+        nome: "Pedro Henrique Eifler",
         email: "pedroqueeifler@gmail.com",
         idade: 20,
         urlLinkedin: "https://www.linkedin.com/in/pedroqueeifler/",
-        cbConhecimentos: []
+        cbConhecimentos: ["ser gostoso", "é bom demais"]
     },
     {
-        nome: "Pedro Herique Eifler",
+        nome: "Pedro Henrique Eifler",
         email: "pedroqueeifler@gmail.com",
         idade: 20,
         urlLinkedin: "https://www.linkedin.com/in/pedroqueeifler/",
-        cbConhecimentos: []
+        cbConhecimentos: ["ser gostoso", "é bom demais"]
     },
     {
-        nome: "Pedro Herique Eifler",
+        nome: "Pedro Henrique Eifler",
         email: "pedroqueeifler@gmail.com",
         idade: 20,
         urlLinkedin: "https://www.linkedin.com/in/pedroqueeifler/",
-        cbConhecimentos: []
+        cbConhecimentos: ["ser gostoso", "é bom demais"]
     },
     {
-        nome: "Pedro Herique Eifler",
+        nome: "Pedro Henrique Eifler",
         email: "pedroqueeifler@gmail.com",
         idade: 20,
         urlLinkedin: "https://www.linkedin.com/in/pedroqueeifler/",
-        cbConhecimentos: []
+        cbConhecimentos: ["ser gostoso", "é bom demais"]
     }
 ]

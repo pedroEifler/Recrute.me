@@ -1,0 +1,67 @@
+#formularioCandidato {
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #3498db;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+}
+
+#formularioCandidato form {
+    width: 30%;
+    padding: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: #2c3e50;
+}
+
+#formularioCandidato input:not([type=checkbox]) {
+    border: 0;
+    background: none;
+    display: block;
+    text-align: center;
+    border: 2px solid white;
+    width: calc(100% - 34px);
+    padding: 15px;
+    outline: none;
+    font-size: 15px;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+#formularioCandidato .linha {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#formularioCandidato .col-1 {
+    width: 100%;
+}
+
+#formularioCandidato .col-2 {
+    width: 50%;
+    margin-left: 15px;
+}
+
+#formularioCandidato .boxConhecimento .linha {
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+#formularioCandidato .boxConhecimento .pretty {
+    display: flex;
+    margin: 10px 0;
+}
+
+#formularioCandidato .boxConhecimento label {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+    #formularioCandidato form {
+        width: 80%;
+    }
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, EmailValidator } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Recrutador } from '../services/recrutador/recrutador';
 import { RecrutadorService } from '../services/recrutador/recrutador.service'
 
@@ -35,7 +35,6 @@ export class LoginComponent implements OnInit {
     } else {
       this.msgErro = "E-mail ou senha invalidos"
     }
-
   }
 
   ehAutentico(): Boolean {
