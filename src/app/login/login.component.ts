@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { faTintSlash } from '@fortawesome/free-solid-svg-icons';
 import { Recrutador } from '../services/recrutador/recrutador';
 import { RecrutadorService } from '../services/recrutador/recrutador.service'
 
@@ -12,13 +13,14 @@ import { RecrutadorService } from '../services/recrutador/recrutador.service'
 export class LoginComponent implements OnInit {
   formRecrutador: FormGroup;
   msgErro: string = "";
-  recrutadorService: RecrutadorService;
+  recrutador
 
-  constructor(public router: Router) { }
+  constructor(public router: Router,
+    private recrutadorService: RecrutadorService) { }
 
   ngOnInit(): void {
-    this.recrutadorService = new RecrutadorService();
     this.criarFormulario(new Recrutador)
+    this.getRecrutador()
   }
 
   criarFormulario(recrutador: Recrutador) {
@@ -27,10 +29,17 @@ export class LoginComponent implements OnInit {
       senha: new FormControl(recrutador.senha)
     })
   }
+  
+  getRecrutador() {
+    this.recrutadorService.GetRecrutador().subscribe(recrutador => {
+      this.recrutador = recrutador[0]
+    });
+  }
 
   logar() {
     if (this.ehAutentico()) {
       this.router.navigate(['tabelaCandidato'])
+      console.warn(this.recrutador);
       this.msgErro = ""
     } else {
       this.msgErro = "E-mail ou senha invalidos"
@@ -38,6 +47,6 @@ export class LoginComponent implements OnInit {
   }
 
   ehAutentico(): Boolean {
-    return (this.formRecrutador.value.email == this.recrutadorService.GetRecrutador()[0].email && this.formRecrutador.value.senha == this.recrutadorService.GetRecrutador()[0].senha);
+    return (this.recrutador.email == this.formRecrutador.value.email && this.recrutador.senha == this.formRecrutador.value.senha)
   }
 }

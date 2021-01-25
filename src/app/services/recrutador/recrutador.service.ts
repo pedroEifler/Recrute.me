@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Recrutador, RECRUTADOR } from './recrutador';
+import { Observable } from 'rxjs';
+import { HttpClient } from "@angular/common/http";
+import { Recrutador } from './recrutador';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecrutadorService {
    
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
-
-  GetRecrutador(): Recrutador[] {
-    return RECRUTADOR;
+  GetRecrutador(): Observable<any> {
+    return this.http.get("http://localhost:3000/recrutador/")
   }
 }

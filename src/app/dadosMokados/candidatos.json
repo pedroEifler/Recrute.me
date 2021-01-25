@@ -1,0 +1,12 @@
+{
+    "candidatos": [
+        {
+            "id": 1,
+            "nome": "Pedro Henrique Eifler",
+            "email": "pedroqueeifler@gmail.com",
+            "idade": 20,
+            "urlLinkedin": "https://www.linkedin.com/in/pedroqueeifler/",
+            "cbConhecimentos": ["C#", "Javascript", "Nodejs", "Angular"]
+        }
+    ]
+}
