@@ -74,11 +74,15 @@
             <th>E-mail</th>
             <th>Conhecimentos</th>
         </tr>
-        <tr *ngFor="let candidado of candidatos">
-            <td>{{ candidado.nome }}</td>
-            <td>{{ candidado.email }}</td>
-            <td>{{ candidado.cbConhecimentos }}</td>
-            
+        <tr *ngFor="let candidato of candidatos" (click)="visualizarCandidato(candidato)">
+            <td>{{ candidato.nome }}</td>
+            <td>{{ candidato.email }}</td>
+            <td>
+                <label *ngFor="let conhecimentos of candidato.cbConhecimentos">
+                    {{ conhecimentos.nome }},
+                </label>
+            </td>
+
         </tr>
     </table>
 </div>
