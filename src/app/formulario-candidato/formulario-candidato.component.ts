@@ -12,20 +12,11 @@ import { cbConhecimentos } from '../services/cbConhecimentos';
 export class FormularioCandidatoComponent implements OnInit {
   formCandidato: FormGroup;
   candidado: Candidato = new Candidato();
-  cbConhecimentos: cbConhecimentos
 
   constructor(private candidatoServices: CandidatoService) { }
 
   ngOnInit(): void {
     this.criarFormulario(new Candidato);
-    this.getAllConhecimentos()
-  }
-  getAllConhecimentos() {
-    this.candidatoServices.getAllConhecimentos().subscribe(conhecimentos => {
-      this.cbConhecimentos = conhecimentos
-    }, err => {
-      console.log("Erro ao buscar os conhecimentos.")
-    })
   }
 
   criarFormulario(candidato: Candidato) {
