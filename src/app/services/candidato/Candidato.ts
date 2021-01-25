@@ -1,9 +1,11 @@
+import { CONHECIMENTOS, Conhecimentos } from "./Conhecimentos"
+
 export class Candidato {
     nome: string = ''
     email: string = ''
     idade: number
     urlLinkedin: string 
-    cbConhecimentos: string[]
+    cbConhecimentos: Conhecimentos[]
 }
 
 export const CANDIDATOS: Candidato[] = [
@@ -12,34 +14,20 @@ export const CANDIDATOS: Candidato[] = [
         email: "pedroqueeifler@gmail.com",
         idade: 20,
         urlLinkedin: "https://www.linkedin.com/in/pedroqueeifler/",
-        cbConhecimentos: ["ser gostoso", "é bom demais"]
+        cbConhecimentos: CONHECIMENTOS
     },
     {
-        nome: "Pedro Henrique Eifler",
-        email: "pedroqueeifler@gmail.com",
+        nome: "Elissa",
+        email: "elissa@gmail.com",
         idade: 20,
         urlLinkedin: "https://www.linkedin.com/in/pedroqueeifler/",
-        cbConhecimentos: ["ser gostoso", "é bom demais"]
+        cbConhecimentos: CONHECIMENTOS
     },
     {
-        nome: "Pedro Henrique Eifler",
-        email: "pedroqueeifler@gmail.com",
+        nome: "Miro",
+        email: "miro@gmail.com",
         idade: 20,
         urlLinkedin: "https://www.linkedin.com/in/pedroqueeifler/",
-        cbConhecimentos: ["ser gostoso", "é bom demais"]
-    },
-    {
-        nome: "Pedro Henrique Eifler",
-        email: "pedroqueeifler@gmail.com",
-        idade: 20,
-        urlLinkedin: "https://www.linkedin.com/in/pedroqueeifler/",
-        cbConhecimentos: ["ser gostoso", "é bom demais"]
-    },
-    {
-        nome: "Pedro Henrique Eifler",
-        email: "pedroqueeifler@gmail.com",
-        idade: 20,
-        urlLinkedin: "https://www.linkedin.com/in/pedroqueeifler/",
-        cbConhecimentos: ["ser gostoso", "é bom demais"]
+        cbConhecimentos: CONHECIMENTOS
     }
 ]

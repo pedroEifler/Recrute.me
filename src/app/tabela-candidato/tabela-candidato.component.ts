@@ -19,6 +19,11 @@ export class TabelaCandidatoComponent implements OnInit {
     this.candidatos = new CandidatoService().GetAllCandidatos();
   }
 
+  visualizarCandidato( candidato: Candidato) {
+    console.log(candidato);
+    
+  }
+
   mostrarBoxFiltro() {
     const box = document.querySelector('.boxFiltro');
     let visivel = (box.className == 'boxFiltro esconder') ? false : true;
