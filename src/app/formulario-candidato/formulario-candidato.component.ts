@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Candidato } from '../services/candidato/Candidato';
+import { CandidatoService } from '../services/candidato/candidato.service';
+import { cbConhecimentos } from '../services/cbConhecimentos';
 
 @Component({
   selector: 'app-formulario-candidato',
@@ -9,12 +11,23 @@ import { Candidato } from '../services/candidato/Candidato';
 })
 export class FormularioCandidatoComponent implements OnInit {
   formCandidato: FormGroup;
+  candidado: Candidato = new Candidato();
+  cbConhecimentos: cbConhecimentos
 
-  constructor() { }
+  constructor(private candidatoServices: CandidatoService) { }
 
   ngOnInit(): void {
     this.criarFormulario(new Candidato);
+    this.getAllConhecimentos()
   }
+  getAllConhecimentos() {
+    this.candidatoServices.getAllConhecimentos().subscribe(conhecimentos => {
+      this.cbConhecimentos = conhecimentos
+    }, err => {
+      console.log("Erro ao buscar os conhecimentos.")
+    })
+  }
+
   criarFormulario(candidato: Candidato) {
     this.formCandidato = new FormGroup({
       nome: new FormControl(candidato.nome),
@@ -25,4 +38,17 @@ export class FormularioCandidatoComponent implements OnInit {
     })
   }
 
+  cadastrarCandidato() {
+    this.candidado = this.formCandidato.value
+    
+    if (this.formCandidato.valid) {
+      console.warn(this.candidado);
+      this.candidatoServices.cadastrar(this.candidado).subscribe(candidato => {
+        this.candidado = new Candidato();
+      }, err => {
+        console.log("Erro ao cadastrar o candidato.");
+
+      })
+    }
+  }
 }

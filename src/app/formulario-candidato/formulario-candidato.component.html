@@ -1,95 +1,48 @@
 <app-header></app-header>
 
 <div id="formularioCandidato">
-    <form [formGroup]="formCandidato">
+    <form [formGroup]="formCandidato" (ngSubmit)="cadastrarCandidato()">
         <div class="linha">
             <div class="col-1">
                 <label>Nome: </label>
                 <br>
-                <input type="text" placeholder="Nome completo">
+                <input type="text" id="nome" formControlName="nome" placeholder="Nome completo" required>
             </div>
         </div>
         <div class="linha">
             <div class="col-1">
                 <label>E-mail: </label>
                 <br>
-                <input type="email" placeholder="exemplo@recrute.me">
+                <input type="email" id="email" formControlName="email" placeholder="exemplo@recrute.me" required>
             </div>
             <div class="col-2">
                 <label>Idade: </label>
                 <br>
-                <input type="number">
+                <input type="number" id="idade" formControlName="idade" required>
             </div>
         </div>
         <div class="linha">
             <div class="col-1">
                 <label>Url Linkedin:</label>
                 <br>
-                <input type="url" placeholder="www.linkedin.com/in/...">
+                <input type="url" id="urlLinkedin" formControlName="urlLinkedin" placeholder="www.linkedin.com/in/..."
+                    required>
             </div>
         </div>
         <div class="boxConhecimento">
             <label>Conhecimento</label>
             <div class="linha">
                 <div class="col-1">
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="c#" type="checkbox">
+                    <div *ngFor="let cbConhecimento of cbConhecimentos" class="pretty p-default p-curve p-thick">
+                        <input id="{{ cbConhecimento.nome }}" type="checkbox">
                         <div class="state">
-                            <label for="c#">C#</label>
-                        </div>
-                    </div>
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="javascript" type="checkbox">
-                        <div class="state">
-                            <label for="javascript">Javascript</label>
-                        </div>
-                    </div>
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="nodejs" type="checkbox">
-                        <div class="state">
-                            <label for="nodejs">Nodejs</label>
-                        </div>
-                    </div>
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="angular" type="checkbox">
-                        <div class="state">
-                            <label for="angular">Angular</label>
-                        </div>
-                    </div>
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="laravel" type="checkbox">
-                        <div class="state">
-                            <label for="laravel">Laravel</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-1">
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="react" type="checkbox">
-                        <div class="state">
-                            <label for="react">React</label>
-                        </div>
-                    </div>
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="ionic" type="checkbox">
-                        <div class="state">
-                            <label for="ionic">Ionic</label>
-                        </div>
-                    </div>
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="mensageria" type="checkbox">
-                        <div class="state">
-                            <label for="mensageria">Mensageria</label>
-                        </div>
-                    </div>
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="php" type="checkbox">
-                        <div class="state">
-                            <label for="php">PHP</label>
+                            <label for="{{ cbConhecimento.nome }}">{{ cbConhecimento.nome }}</label>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <button type="button">Voltar</button>
+        <button type="submit">Cadastrar</button>
     </form>
 </div>

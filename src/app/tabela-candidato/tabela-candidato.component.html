@@ -1,7 +1,7 @@
 <div id="tabela">
     <app-header></app-header>
     <table class="table">
-        <button class="bnt bntNovo">
+        <button class="bnt bntNovo" routerLink="/formularioCandidato">
             <fa-icon [icon]="novo"></fa-icon> Novo
         </button>
         <button class="bnt bntPesquisar" (click)="mostrarBoxFiltro()">
@@ -10,60 +10,10 @@
         <div class="boxFiltro esconder">
             <div class="linha">
                 <div class="col-1">
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="c#" type="checkbox">
+                    <div *ngFor="let cbConhecimento of cbConhecimentos" class="pretty p-default p-curve p-thick">
+                        <input id="{{ cbConhecimento.nome }}" type="checkbox">
                         <div class="state">
-                            <label for="c#">C#</label>
-                        </div>
-                    </div>
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="javascript" type="checkbox">
-                        <div class="state">
-                            <label for="javascript">Javascript</label>
-                        </div>
-                    </div>
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="nodejs" type="checkbox">
-                        <div class="state">
-                            <label for="nodejs">Nodejs</label>
-                        </div>
-                    </div>
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="angular" type="checkbox">
-                        <div class="state">
-                            <label for="angular">Angular</label>
-                        </div>
-                    </div>
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="laravel" type="checkbox">
-                        <div class="state">
-                            <label for="laravel">Laravel</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-1">
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="react" type="checkbox">
-                        <div class="state">
-                            <label for="react">React</label>
-                        </div>
-                    </div>
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="ionic" type="checkbox">
-                        <div class="state">
-                            <label for="ionic">Ionic</label>
-                        </div>
-                    </div>
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="mensageria" type="checkbox">
-                        <div class="state">
-                            <label for="mensageria">Mensageria</label>
-                        </div>
-                    </div>
-                    <div class="pretty p-default p-curve p-thick">
-                        <input id="php" type="checkbox">
-                        <div class="state">
-                            <label for="php">PHP</label>
+                            <label for="{{ cbConhecimento.nome }}">{{ cbConhecimento.nome }}</label>
                         </div>
                     </div>
                 </div>
@@ -77,12 +27,7 @@
         <tr *ngFor="let candidato of candidatos" (click)="visualizarCandidato(candidato)">
             <td>{{ candidato.nome }}</td>
             <td>{{ candidato.email }}</td>
-            <td>
-                <label *ngFor="let conhecimentos of candidato.cbConhecimentos">
-                    {{ conhecimentos.nome }},
-                </label>
-            </td>
-
+            <td>{{ candidato.cbConhecimentos }}</td>
         </tr>
     </table>
 </div>

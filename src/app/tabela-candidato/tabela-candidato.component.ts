@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Candidato } from '../services/candidato/Candidato';
 import { CandidatoService } from '../services/candidato/candidato.service';
+import { cbConhecimentos } from '../services/cbConhecimentos';
 
 @Component({
   selector: 'app-tabela-candidato',
@@ -11,17 +12,32 @@ import { CandidatoService } from '../services/candidato/candidato.service';
 export class TabelaCandidatoComponent implements OnInit {
   novo = faPlus;
   pesquisar = faSearch;
-  candidatos: Candidato[];
+  candidatos
+  cbConhecimentos: cbConhecimentos;
 
-  constructor() { }
+  constructor(private candidatoServices: CandidatoService) { }
 
   ngOnInit(): void {
-    this.candidatos = new CandidatoService().GetAllCandidatos();
+    this.getCandidatos();
+    this.getAllConhecimentos();
   }
 
-  visualizarCandidato( candidato: Candidato) {
+  getCandidatos() {
+    this.candidatoServices.getAllCandidatos().subscribe(candidato => {
+      this.candidatos = candidato;
+    })
+  }
+
+  getAllConhecimentos() {
+    this.candidatoServices.getAllConhecimentos().subscribe(conhecimentos => {
+      this.cbConhecimentos = conhecimentos
+    }, err => {
+      console.log("Erro ao buscar os conhecimentos.")
+    })
+  }
+
+  visualizarCandidato(candidato: Candidato) {
     console.log(candidato);
-    
   }
 
   mostrarBoxFiltro() {

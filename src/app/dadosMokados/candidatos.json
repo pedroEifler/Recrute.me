@@ -1,12 +1,25 @@
 {
-    "candidatos": [
-        {
-            "id": 1,
-            "nome": "Pedro Henrique Eifler",
-            "email": "pedroqueeifler@gmail.com",
-            "idade": 20,
-            "urlLinkedin": "https://www.linkedin.com/in/pedroqueeifler/",
-            "cbConhecimentos": ["C#", "Javascript", "Nodejs", "Angular"]
-        }
-    ]
+  "candidatos": [
+    {
+      "id": 1,
+      "nome": "Pedro Henrique Eifler",
+      "email": "pedroqueeifler@gmail.com",
+      "idade": 20,
+      "urlLinkedin": "https://www.linkedin.com/in/pedroqueeifler/",
+      "cbConhecimentos": [
+        "C#",
+        "Javascript",
+        "Nodejs",
+        "Angular"
+      ]
+    },
+    {
+      "nome": "Elissa",
+      "email": "elissa@gmail.com",
+      "idade": 20,
+      "urlLinkedin": "elissa",
+      "cbConhecimento": null,
+      "id": 2
+    }
+  ]
 }
