@@ -1,13 +1,35 @@
-<div id="tabela">
-    <app-header></app-header>
-    <table class="table">
-        <button class="bnt bntNovo">
-            <fa-icon [icon]="novo"></fa-icon> Novo
-        </button>
-        <button class="bnt bntPesquisar" (click)="mostrarBoxFiltro()">
-            <fa-icon [icon]="pesquisar"></fa-icon> Filtrar
-        </button>
-        <div class="boxFiltro esconder">
+<app-header></app-header>
+
+<div id="formularioCandidato">
+    <form [formGroup]="formCandidato">
+        <div class="linha">
+            <div class="col-1">
+                <label>Nome: </label>
+                <br>
+                <input type="text" placeholder="Nome completo">
+            </div>
+        </div>
+        <div class="linha">
+            <div class="col-1">
+                <label>E-mail: </label>
+                <br>
+                <input type="email" placeholder="exemplo@recrute.me">
+            </div>
+            <div class="col-2">
+                <label>Idade: </label>
+                <br>
+                <input type="number">
+            </div>
+        </div>
+        <div class="linha">
+            <div class="col-1">
+                <label>Url Linkedin:</label>
+                <br>
+                <input type="url" placeholder="www.linkedin.com/in/...">
+            </div>
+        </div>
+        <div class="boxConhecimento">
+            <label>Conhecimento</label>
             <div class="linha">
                 <div class="col-1">
                     <div class="pretty p-default p-curve p-thick">
@@ -69,16 +91,5 @@
                 </div>
             </div>
         </div>
-        <tr>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Conhecimentos</th>
-        </tr>
-        <tr *ngFor="let candidado of candidatos">
-            <td>{{ candidado.nome }}</td>
-            <td>{{ candidado.email }}</td>
-            <td>{{ candidado.cbConhecimentos }}</td>
-            
-        </tr>
-    </table>
+    </form>
 </div>

@@ -1,11 +1,11 @@
 <div id="login">
-    <form class="form" [formGroup]="formCandidato" (ngSubmit)="onSubmit()">
+    <form class="form" [formGroup]="formRecrutador" (ngSubmit)="logar()">
         <h1>Recrute.me</h1>
 
         <p class="msgErro">{{ msgErro }}</p>
 
-        <input class="input" type="text" id="email" formControlName="email" placeholder="E-mail">
+        <input class="input" type="email" id="email" formControlName="email" placeholder="E-mail" email="true">
         <input class="input" type="password" id="senha" formControlName="senha" placeholder="Senha">
-        <button class="bnt" type="submit">Confirmar</button>
+        <button class="bnt">Confirmar</button>
     </form>
 </div>

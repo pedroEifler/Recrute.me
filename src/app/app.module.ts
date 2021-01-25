@@ -7,12 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { TabelaCandidatoComponent } from './tabela-candidato/tabela-candidato.component';
+import { FormularioCandidatoComponent } from './formulario-candidato/formulario-candidato.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    TabelaCandidatoComponent
+    TabelaCandidatoComponent,
+    FormularioCandidatoComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

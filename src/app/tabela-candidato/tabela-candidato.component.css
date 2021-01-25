@@ -1,22 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@800&display=swap');
 #tabela {
     padding-top: 100vh;
     background-color: #2980b9;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-#tabela .header {
-    background-color: white;
-    position: absolute;
-    top: 0;
-    width: 100vw;
-}
-
-#tabela h1 {
-    color: #3498db;
-    font-weight: 500;
-    text-align: center;
-    font-family: 'Turret Road', cursive;
 }
 
 .table {
@@ -67,7 +52,7 @@
 
 .bnt {
     position: absolute;
-    top: -20%;
+    top: -50px;
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
@@ -84,19 +69,19 @@
 }
 
 .bntNovo {
-    background-color: #3498db;
+    background-color: #2ecc71;
     margin-left: 10px;
     border-radius: 10px;
 }
 
 .bntPesquisar {
-    background-color: #27ae60;
+    background-color: #e67e22;
     margin-left: 115px;
 }
 
 .boxFiltro {
     display: flex;
-    background-color: #3498db;
+    background-color: #e67e22;
     position: absolute;
     top: -20%;
     margin-left: 230px;
@@ -104,7 +89,7 @@
     border-radius: 10px;
     vertical-align: auto;
     opacity: 0;
-    transition: 1s;
+    transition: 0.5s;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.315);
 }
 
@@ -126,4 +111,18 @@
 
 .mostrar {
     opacity: 100;
+}
+
+.boxFiltro .linha {
+    display: flex;
+    padding: 15px;
+}
+
+.boxFiltro .col-1 {
+    width: 100%;
+}
+
+.boxFiltro .col-2 {
+    width: 50%;
+    margin-left: 15px;
 }
