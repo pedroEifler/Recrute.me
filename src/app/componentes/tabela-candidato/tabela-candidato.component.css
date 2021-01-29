@@ -1,5 +1,5 @@
 #tabela {
-    padding-top: 100vh;
+    height: 100vh;
     background-color: #2980b9;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -82,13 +82,13 @@
 .boxFiltro {
     display: flex;
     background-color: #e67e22;
+    width: calc(100% - 270px);
     position: absolute;
-    top: -20%;
+    top: -50px;
     margin-left: 230px;
     padding: 8px 20px;
     border-radius: 10px;
     vertical-align: auto;
-    opacity: 0;
     transition: 0.5s;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.315);
 }
@@ -105,12 +105,13 @@
 }
 
 .esconder {
+    margin-left: 0;
     opacity: 0;
     visibility: hidden;
 }
 
 .mostrar {
-    opacity: 100;
+    visibility: visible;
 }
 
 .boxFiltro .linha {
@@ -125,4 +126,8 @@
 .boxFiltro .col-2 {
     width: 50%;
     margin-left: 15px;
+}
+
+.pretty {
+    width: 100px;
 }

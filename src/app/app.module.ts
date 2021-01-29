@@ -6,10 +6,10 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { TabelaCandidatoComponent } from './tabela-candidato/tabela-candidato.component';
-import { FormularioCandidatoComponent } from './formulario-candidato/formulario-candidato.component';
-import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { TabelaCandidatoComponent } from './componentes/tabela-candidato/tabela-candidato.component';
+import { FormularioCandidatoComponent } from './componentes/formulario-candidato/formulario-candidato.component';
+import { HeaderComponent } from './componentes/header/header.component';
 
 @NgModule({
   declarations: [

@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div id="formularioCandidato">
-    <form [formGroup]="formCandidato" (ngSubmit)="cadastrarCandidato()">
+    <form [formGroup]="formCandidato">
         <div class="linha">
             <div class="col-1">
                 <label>Nome: </label>
@@ -34,7 +34,7 @@
             <div class="linha">
                 <div class="col-1">
                     <div *ngFor="let cbConhecimento of cbConhecimentos" class="pretty p-default p-curve p-thick">
-                        <input id="{{ cbConhecimento.nome }}" type="checkbox">
+                        <input class="checkbox" id="{{ cbConhecimento.nome }}" [value]="cbConhecimento.id" formControlName="cbConhecimentos" type="checkbox">
                         <div class="state">
                             <label for="{{ cbConhecimento.nome }}">{{ cbConhecimento.nome }}</label>
                         </div>
@@ -42,7 +42,21 @@
                 </div>
             </div>
         </div>
-        <button type="button">Voltar</button>
-        <button type="submit">Cadastrar</button>
+        <div class="menu-left">
+            <button class="btn voltar" type="button" title="Voltar" routerLink="/tabelaCandidato">
+                <fa-icon [icon]="voltar"></fa-icon>
+            </button>
+        </div>
+        <div class="menu-right">
+            <button class="btn cadastrar" type="submit" title="Cadastrar" (click)="cadastrarCandidato()">
+                <fa-icon [icon]="novo"></fa-icon>
+            </button>
+            <button class="btn alterar" type="submit" title="Alterar" (click)="atualizarCandidato()">
+                <fa-icon [icon]="alterar"></fa-icon>
+            </button>
+            <button class="btn deletar" type="submit" title="Deletar" (click)="deletarCandidato()">
+                <fa-icon [icon]="deletar"></fa-icon>
+            </button>
+        </div>
     </form>
 </div>

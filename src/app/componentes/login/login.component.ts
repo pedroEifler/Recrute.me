@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { faTintSlash } from '@fortawesome/free-solid-svg-icons';
-import { Recrutador } from '../services/recrutador/recrutador';
-import { RecrutadorService } from '../services/recrutador/recrutador.service'
+import { Recrutador } from '../../models/recrutador/recrutador';
+import { RecrutadorService } from '../../models/recrutador/recrutador.service'
 
 @Component({
   selector: 'app-login',

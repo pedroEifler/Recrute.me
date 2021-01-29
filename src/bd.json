@@ -1,0 +1,77 @@
+{
+  "candidatos": [
+    {
+      "nome": "Pedro Henrique Eifler",
+      "email": "pedroqueeifler@gmail.com",
+      "idade": 20,
+      "urlLinkedin": "https://www.linkedin.com/in/pedroqueeifler/",
+      "cbConhecimentos": [
+        "1"
+      ],
+      "id": 1
+    },
+    {
+      "nome": "Elissa",
+      "email": "elissa@gmail.com",
+      "idade": 20,
+      "urlLinkedin": "elissa",
+      "cbConhecimentos": [
+        "2"
+      ],
+      "id": 2
+    },
+    {
+      "nome": "test",
+      "email": "test",
+      "idade": 22,
+      "urlLinkedin": "test",
+      "cbConhecimentos": true,
+      "id": 3
+    }
+  ],
+  "cbConhecimentos": [
+    {
+      "id": 0,
+      "nome": "C#"
+    },
+    {
+      "id": 1,
+      "nome": "Javascript"
+    },
+    {
+      "id": 2,
+      "nome": "Nodejs"
+    },
+    {
+      "id": 3,
+      "nome": "Angular"
+    },
+    {
+      "id": 4,
+      "nome": "React"
+    },
+    {
+      "id": 5,
+      "nome": "Ionic"
+    },
+    {
+      "id": 6,
+      "nome": "Mensageria"
+    },
+    {
+      "id": 7,
+      "nome": "PHP"
+    },
+    {
+      "id": 8,
+      "nome": "Laravel"
+    }
+  ],
+  "recrutador": [
+    {
+      "id": 1,
+      "email": "adm@recrute.me",
+      "senha": "adm"
+    }
+  ]
+}
