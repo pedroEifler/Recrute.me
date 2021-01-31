@@ -29,14 +29,14 @@
                     required>
             </div>
         </div>
-        <div class="boxConhecimento">
+        <div class="boxConhecimento" formArrayName="cbConhecimentos">
             <label>Conhecimento</label>
             <div class="linha">
                 <div class="col-1">
-                    <div *ngFor="let cbConhecimento of cbConhecimentos" class="pretty p-default p-curve p-thick">
-                        <input class="checkbox" id="{{ cbConhecimento.nome }}" [value]="cbConhecimento.id" formControlName="cbConhecimentos" type="checkbox">
+                    <div *ngFor="let cbConhecimento of cbConhecimentos; let i = index" class="pretty p-default p-curve p-thick">
+                        <input class="checkbox" type="checkbox" [checked]="cbConhecimento.checked" [formControlName]="i">
                         <div class="state">
-                            <label for="{{ cbConhecimento.nome }}">{{ cbConhecimento.nome }}</label>
+                            <label>{{ cbConhecimento.nome }}</label>
                         </div>
                     </div>
                 </div>

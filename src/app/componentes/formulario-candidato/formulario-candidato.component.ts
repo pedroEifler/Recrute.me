@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { faArrowLeft, faPen, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { cbConhecimentos } from 'src/app/models/candidato/cbConhecimentos/cbConhecimentos';
 import { Candidato } from '../../models/candidato/Candidato';
 import { CandidatoService } from '../../models/candidato/candidato.service';
 
@@ -17,26 +18,35 @@ export class FormularioCandidatoComponent implements OnInit {
   deletar = faTrash
   formCandidato: FormGroup;
   candidato: Candidato;
-  cbConhecimentos: Array<any> = new Array();
+  cbConhecimentos = [
+    { checked: false, nome: "C#" },
+    { checked: false, nome: "Javascript" },
+    { checked: false, nome: "Nodejs" },
+    { checked: false, nome: "Angular" },
+    { checked: false, nome: "React" },
+    { checked: false, nome: "Ionic" },
+    { checked: false, nome: "Mensageria" },
+    { checked: false, nome: "PHP" },
+    { checked: false, nome: "Laravel" }
+  ]
 
   constructor(
     private candidatoServices: CandidatoService,
-    private router: Router) { }
+    private router: Router,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.criarFormulario(new Candidato);
     this.NovoOuAtualizacao();
-    this.listarConhecimentos();
-    //this.obterMarcados()
+    this.criarFormulario(new Candidato);
   }
 
   criarFormulario(candidato: Candidato) {
-    this.formCandidato = new FormGroup({
+    this.formCandidato = this.formBuilder.group({
       nome: new FormControl(candidato.nome),
       email: new FormControl(candidato.email),
       idade: new FormControl(candidato.idade),
       urlLinkedin: new FormControl(candidato.urlLinkedin),
-      cbConhecimentos: new FormControl(candidato.cbConhecimentos)
+      cbConhecimentos: this.criarConhecimento()
     })
   }
 
@@ -62,31 +72,24 @@ export class FormularioCandidatoComponent implements OnInit {
         urlLinkedin: candidato.urlLinkedin,
         cbConhecimentos: candidato.cbConhecimentos
       })
-      const aa = this.cbConhecimentos
-        .map((checked, i) => checked ? this.formCandidato.value.cbConhecimentos[i].id : null)
-        .filter(v => v !== null)
-      console.log(aa);
-
     }, err => {
       console.log("Erro ao buscar o candidato.")
     })
-
-
-
   }
 
-  listarConhecimentos() {
-    this.candidatoServices.listarConhecimentos().subscribe(conhecimentos => {
-      this.cbConhecimentos = conhecimentos;
+  criarConhecimento() {
+    console.log(this.cbConhecimentos);
 
-    }, err => {
-      console.log("Erro ao buscar os conhecimentos.")
-    })
+    const valores = this.cbConhecimentos
+      .map(v => new FormControl(false))
+      .filter(v => v !== null);
+    console.log(valores);
+    return this.formBuilder.array(valores);
+
   }
 
   cadastrarCandidato() {
-
-    this.candidato = this.formCandidato.value
+    this.candidato = this.converterParaObjeto()
     this.candidatoServices.cadastrar(this.candidato).subscribe(candidato => {
       this.candidato = new Candidato();
       this.router.navigate(["/tabelaCandidato"]);
@@ -97,14 +100,9 @@ export class FormularioCandidatoComponent implements OnInit {
 
   atualizarCandidato() {
     const id = this.router.url.slice(21);
-    let candidato: Candidato = this.formCandidato.value
-    console.log(
+    this.candidato = this.converterParaObjeto()
 
-      candidato.cbConhecimentos
-    );
-
-
-    this.candidatoServices.atualizar(id, candidato).subscribe(candidato => {
+    this.candidatoServices.atualizar(id, this.candidato).subscribe(candidato => {
       this.router.navigate(["/tabelaCandidato"]);
     }, err => {
       console.log("Erro ao atualizar o candidato.");
@@ -121,5 +119,14 @@ export class FormularioCandidatoComponent implements OnInit {
     })
   }
 
-
+  converterParaObjeto(): any {
+    let valueSubmit = Object.assign({}, this.formCandidato.value);
+    
+    valueSubmit = Object.assign(valueSubmit, {
+      cbConhecimentos: valueSubmit.cbConhecimentos
+        .map((v, i) => v ? this.cbConhecimentos[i] : false)
+        .filter(v => v !== false)
+    });
+    return valueSubmit;
+  }
 }

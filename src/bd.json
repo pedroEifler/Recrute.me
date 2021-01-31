@@ -6,65 +6,45 @@
       "idade": 20,
       "urlLinkedin": "https://www.linkedin.com/in/pedroqueeifler/",
       "cbConhecimentos": [
-        "1"
+        {
+          "checked": true,
+          "nome": "C#"
+        },
+        {
+          "checked": false,
+          "nome": "Javascript"
+        },
+        {
+          "checked": false,
+          "nome": "Nodejs"
+        },
+        {
+          "checked": false,
+          "nome": "Angular"
+        }
       ],
       "id": 1
     },
     {
-      "nome": "Elissa",
+      "nome": "Elissa 2",
       "email": "elissa@gmail.com",
       "idade": 20,
       "urlLinkedin": "elissa",
       "cbConhecimentos": [
-        "2"
+        {
+          "checked": false,
+          "nome": "C#"
+        },
+        {
+          "checked": false,
+          "nome": "Javascript"
+        },
+        {
+          "checked": false,
+          "nome": "Angular"
+        }
       ],
       "id": 2
-    },
-    {
-      "nome": "test",
-      "email": "test",
-      "idade": 22,
-      "urlLinkedin": "test",
-      "cbConhecimentos": true,
-      "id": 3
-    }
-  ],
-  "cbConhecimentos": [
-    {
-      "id": 0,
-      "nome": "C#"
-    },
-    {
-      "id": 1,
-      "nome": "Javascript"
-    },
-    {
-      "id": 2,
-      "nome": "Nodejs"
-    },
-    {
-      "id": 3,
-      "nome": "Angular"
-    },
-    {
-      "id": 4,
-      "nome": "React"
-    },
-    {
-      "id": 5,
-      "nome": "Ionic"
-    },
-    {
-      "id": 6,
-      "nome": "Mensageria"
-    },
-    {
-      "id": 7,
-      "nome": "PHP"
-    },
-    {
-      "id": 8,
-      "nome": "Laravel"
     }
   ],
   "recrutador": [

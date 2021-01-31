@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Candidato } from '../../models/candidato/Candidato';
 import { CandidatoService } from '../../models/candidato/candidato.service';
-import { cbConhecimentos } from '../../models/candidato/cbConhecimentos/cbConhecimentos';
 
 @Component({
   selector: 'app-tabela-candidato',
@@ -13,24 +12,15 @@ import { cbConhecimentos } from '../../models/candidato/cbConhecimentos/cbConhec
 export class TabelaCandidatoComponent implements OnInit {
   novo = faPlus;
   pesquisar = faSearch;
-  cbConhecimentos: cbConhecimentos
   candidatos: Candidato
+  cbFiltro: string;
 
   constructor(
     private candidatoServices: CandidatoService,
     private router: Router) { }
 
   ngOnInit(): void {
-    this.listarConhecimentos();
     this.listarCandidatos();
-  }
-
-  listarConhecimentos() {
-    this.candidatoServices.listarConhecimentos().subscribe(conhecimentos => {
-      this.cbConhecimentos = conhecimentos;
-    }, err => {
-      console.log("Erro ao buscar os conhecimentos.")
-    })
   }
 
   listarCandidatos() {

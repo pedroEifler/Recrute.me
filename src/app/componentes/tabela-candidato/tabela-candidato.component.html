@@ -4,30 +4,25 @@
         <button class="bnt bntNovo" routerLink="/formularioCandidato">
             <fa-icon [icon]="novo"></fa-icon> Novo
         </button>
-        <button class="bnt bntPesquisar" (click)="mostrarBoxFiltro()">
-            <fa-icon [icon]="pesquisar"></fa-icon> Filtrar
-        </button>
-        <div class="boxFiltro esconder">
-            <div class="linha">
-                <div class="col-1">
-                    <div *ngFor="let cbConhecimento of cbConhecimentos" class="pretty p-default p-curve p-thick">
-                        <input id="{{ cbConhecimento.nome }}" type="checkbox">
-                        <div class="state">
-                            <label for="{{ cbConhecimento.nome }}">{{ cbConhecimento.nome }}</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="boxFiltro">
+            <label>
+                Pesquisar:
+                <input type="text" id="cbFiltro" [(ngModel)]="cbFiltro" placeholder="Conhecimentos...">
+            </label>
         </div>
         <tr>
             <th>Nome</th>
             <th>E-mail</th>
             <th>Conhecimentos</th>
         </tr>
-        <tr *ngFor="let candidato of candidatos" (click)="visualizarCandidato(candidato)">
+        <tr *ngFor="let candidato of candidatos | conhecimentoFiltro:cbFiltro" (click)="visualizarCandidato(candidato)">
             <td>{{ candidato.nome }}</td>
             <td>{{ candidato.email }}</td>
-            <td>{{ candidato.cbConhecimentos }}</td>
+            <td>
+                <label *ngFor="let cbConhecimento of candidato.cbConhecimentos">
+                    {{ cbConhecimento.nome }},
+                </label>
+            </td>
         </tr>
     </table>
 </div>
