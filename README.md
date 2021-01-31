@@ -12,7 +12,7 @@ E é preciso iniciar o bando de dados, utilizando json-server.
 
 json-server src/bd.json
 
-##Recrute.me
+## Recrute.me
 
 Primeiramente o recrutador precisa logar, o login é feito atravez de um e-mail e senha pré-programado,
 
