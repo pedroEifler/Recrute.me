@@ -11,40 +11,19 @@
           "nome": "C#"
         },
         {
-          "checked": false,
+          "checked": true,
           "nome": "Javascript"
         },
         {
-          "checked": false,
+          "checked": true,
           "nome": "Nodejs"
         },
         {
-          "checked": false,
+          "checked": true,
           "nome": "Angular"
         }
       ],
       "id": 1
-    },
-    {
-      "nome": "Elissa 2",
-      "email": "elissa@gmail.com",
-      "idade": 20,
-      "urlLinkedin": "elissa",
-      "cbConhecimentos": [
-        {
-          "checked": false,
-          "nome": "C#"
-        },
-        {
-          "checked": false,
-          "nome": "Javascript"
-        },
-        {
-          "checked": false,
-          "nome": "Angular"
-        }
-      ],
-      "id": 2
     }
   ],
   "recrutador": [
